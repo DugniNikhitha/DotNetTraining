@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net6.0\NUnit.AssemblyHooks.cs" />
+    <Compile Include="obj\Debug\net6.0\Training.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net6.0\Training.BDD.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net6.0\Training.BDD.GlobalUsings.g.cs" />
+    <Compile Include="obj\Debug\net6.0\Training.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\Debug\net6.0\Training.BDD.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net6.0\Training.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\Training.BDD.csproj.nuget.dgspec.json" />
+    <Content Include="obj\Training.csproj.nuget.dgspec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.2.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="102.0.5005.6102" />
+    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.40" />
+    <PackageReference Include="nunit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="FluentAssertions" Version="6.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Support\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\Debug\net6.0\refint\Training.BDD.dll" />
+    <None Include="obj\Debug\net6.0\refint\Training.dll" />
+    <None Include="obj\Debug\net6.0\ref\Training.BDD.dll" />
+    <None Include="obj\Debug\net6.0\ref\Training.dll" />
+    <None Include="obj\Debug\net6.0\Training.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net6.0\Training.assets.cache" />
+    <None Include="obj\Debug\net6.0\Training.BDD.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net6.0\Training.BDD.assets.cache" />
+    <None Include="obj\Debug\net6.0\Training.BDD.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net6.0\Training.BDD.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net6.0\Training.BDD.csproj.CopyComplete" />
+    <None Include="obj\Debug\net6.0\Training.BDD.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net6.0\Training.BDD.dll" />
+    <None Include="obj\Debug\net6.0\Training.BDD.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net6.0\Training.BDD.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net6.0\Training.BDD.pdb" />
+    <None Include="obj\Debug\net6.0\Training.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net6.0\Training.csproj.CopyComplete" />
+    <None Include="obj\Debug\net6.0\Training.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net6.0\Training.dll" />
+    <None Include="obj\Debug\net6.0\Training.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net6.0\Training.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net6.0\Training.pdb" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Training.BDD.csproj.nuget.g.props" />
+    <None Include="obj\Training.BDD.csproj.nuget.g.targets" />
+    <None Include="obj\Training.csproj.nuget.g.props" />
+    <None Include="obj\Training.csproj.nuget.g.targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrainingBasic\Training.Sample.csproj" />
+  </ItemGroup>
+
+</Project>
