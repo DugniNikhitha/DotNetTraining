@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace Training.Sample.Utilities
+namespace Helpers.Driver
 {
     public interface IDriver
     {
         public IWebDriver GetDriver();
-        public void GoToUrl(string url);
+        public void GoToUrl();
         public void MaximiseDriver();
         public void MinimiseDriver();
         public void RefreshDriver();

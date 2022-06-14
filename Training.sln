@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training.BDD", "Training\Training.BDD.csproj", "{49EF4E2A-3FCC-4BD9-9848-E36124905780}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training.BDD", "Training\Training.BDD.csproj", "{49EF4E2A-3FCC-4BD9-9848-E36124905780}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training.Sample", "TrainingBasic\Training.Sample.csproj", "{E980E70C-8642-4F8F-AD43-D89021BD6DBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "TrainingBasic\Helpers.csproj", "{E980E70C-8642-4F8F-AD43-D89021BD6DBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

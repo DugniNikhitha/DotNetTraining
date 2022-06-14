@@ -76,21 +76,12 @@ namespace Training.BDD.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Skillset in EPAM search")]
-        [NUnit.Framework.CategoryAttribute("EPAMSkillSearchTest")]
-        [NUnit.Framework.TestCaseAttribute("Automation", "389", null)]
-        [NUnit.Framework.TestCaseAttribute("Devops", "236", null)]
-        public virtual void SkillsetInEPAMSearch(string skill, string record, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("UITests")]
+        public virtual void SkillsetInEPAMSearch()
         {
-            string[] @__tags = new string[] {
-                    "EPAMSkillSearchTest"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = new string[] {
+                    "UITests"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Skill", skill);
-            argumentsOfScenario.Add("Record", record);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Skillset in EPAM search", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
@@ -118,14 +109,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.And("I have navigated to the Search panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Skill"});
+                table1.AddRow(new string[] {
+                            "Automation"});
 #line 10
- testRunner.When(string.Format("I entered the SkillSet to search as {0}", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I entered the SkillSet to search as", ((string)(null)), table1, "When ");
 #line hidden
-#line 11
- testRunner.Then(string.Format("The record message of the search result should match the {0}", record), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 12
- testRunner.And("Close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Record"});
+                table2.AddRow(new string[] {
+                            "392"});
+#line 13
+ testRunner.Then("The record message of the search result should match", ((string)(null)), table2, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

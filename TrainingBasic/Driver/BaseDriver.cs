@@ -1,30 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+using Helpers.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 
-namespace Training.Sample.Utilities
+namespace Helpers.Driver
 {
-    public class BasePage : IDriver
+    public class BaseDriver : IDriver
     {
+        public string browserName;
         private IWebDriver driver;
-        public BasePage()
-        {
+        private static Lazy<BaseDriver> DriverInstance = new Lazy<BaseDriver>(() => new BaseDriver());
+        JsonReader js = new JsonReader();
 
+        public static BaseDriver GetDriverInstance
+        {
+            get 
+            { 
+                return DriverInstance.Value; 
+            }
+        }
+
+        public BaseDriver()
+        {
+           
         }
         public IWebDriver GetDriver()
         {
             return driver;
         }
-
-        public void SetDriver(string browserName)
+        
+        public void SetDriver()
         {
+            js.extractData();
+            string browserName = js.property.browser;
             switch (browserName)
             {
                 case "Firefox":
@@ -45,8 +55,9 @@ namespace Training.Sample.Utilities
             }
         }
 
-        public void GoToUrl(string url)
+        public void GoToUrl()
         {
+            string url = js.property.url;
             driver.Navigate().GoToUrl(url);
         }
         public void MaximiseDriver()

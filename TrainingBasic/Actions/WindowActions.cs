@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Training.Tests
+namespace Helpers.Actions
 {
-    internal class Class1
+    internal class WindowActions
     {
     }
 }
