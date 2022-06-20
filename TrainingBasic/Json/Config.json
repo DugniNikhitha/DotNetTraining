@@ -1,4 +1,5 @@
 {
     "url": "https://www.epam.com/",
-    "browser": "Chrome"
+    "browser": "Chrome",
+    "BaseUrl": "https://reqres.in"
 }

@@ -77,7 +77,7 @@ namespace Training.BDD.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Skillset in EPAM search using example")]
         [NUnit.Framework.CategoryAttribute("UITests")]
-        [NUnit.Framework.TestCaseAttribute("Automation", "392", null)]
+        [NUnit.Framework.TestCaseAttribute("Automation", "394", null)]
         [NUnit.Framework.TestCaseAttribute("Devops", "237", null)]
         public virtual void SkillsetInEPAMSearchUsingExample(string skill, string record, string[] exampleTags)
         {

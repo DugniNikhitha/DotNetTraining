@@ -19,6 +19,7 @@ namespace Helpers.Actions
 
         public void MoveToElement(By selector)
         {
+            //Action = new Actions(driver);
             Action = new OpenQA.Selenium.Interactions.Actions(driver);
             Action.MoveToElement(driver.FindElement(selector)).Perform();
         }

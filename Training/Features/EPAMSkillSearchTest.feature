@@ -12,6 +12,6 @@ Scenario Outline: Skillset in EPAM search
 	| Automation |
 	Then The record message of the search result should match
 	| Record |
-	| 392    |
+	| 394    |
 
 

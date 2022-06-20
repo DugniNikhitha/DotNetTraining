@@ -12,7 +12,7 @@ Scenario Outline: Skillset in EPAM search using example
 
 Examples: 
 	| Skill      | Record |
-	| Automation | 392    |
+	| Automation | 394    |
 	| Devops     | 237    |
 
 

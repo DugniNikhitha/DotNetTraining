@@ -119,7 +119,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Record"});
                 table2.AddRow(new string[] {
-                            "392"});
+                            "394"});
 #line 13
  testRunner.Then("The record message of the search result should match", ((string)(null)), table2, "Then ");
 #line hidden

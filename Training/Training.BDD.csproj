@@ -8,6 +8,7 @@
 
 	<PropertyGroup>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<OutputType>Library</OutputType>
 	</PropertyGroup>
 
   <ItemGroup>

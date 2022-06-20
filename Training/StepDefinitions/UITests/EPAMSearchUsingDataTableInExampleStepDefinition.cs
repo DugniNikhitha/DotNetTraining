@@ -7,6 +7,7 @@ using TechTalk.SpecFlow;
 namespace Training.BDD.StepDefinitions.UITests
 {
     [Binding]
+    
     public class EPAMSearchUsingDataTableInExampleStepDefinition
     {
         private EPAMHomePage epamHome = EPAMHomePage.GetInstance;
@@ -23,6 +24,7 @@ namespace Training.BDD.StepDefinitions.UITests
         [Given(@"I have navigated to the Search combo")]
         public void GivenIHaveNavigatedToTheSearchCombo()
         {
+            //EPAMHomePage.GetInstance.AcceptCookies(); Follow this for all pages 
             epamHome.AcceptCookies();
             epamHome.ClickSearch();
         }

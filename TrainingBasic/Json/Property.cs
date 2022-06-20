@@ -10,6 +10,7 @@ namespace Helpers.Json
     {
         public string url;
         public string browser;
+        public string BaseUrl;
 
     }
 }
