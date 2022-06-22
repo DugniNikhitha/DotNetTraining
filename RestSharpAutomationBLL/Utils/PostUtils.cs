@@ -14,7 +14,12 @@ namespace RestSharpAutomationBLL.Utils
 {
     public class PostUtils
     {
-        //Create a new post
+        /// <summary>
+        /// Creates a POST request with payload
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="job"></param>
+        /// <returns></returns>
         public static CreatePostValidResponse CreatePost(string name, string job)
         {
             return RestClientUtils
@@ -32,7 +37,12 @@ namespace RestSharpAutomationBLL.Utils
             return JsonConvert.SerializeObject(request);
         }
 
-        //Update a post
+        /// <summary>
+        /// Creates a PATCH request with payload
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="job"></param>
+        /// <returns></returns>
         public static CreatePostValidResponse UpdateRequest(string name, string job)
         {
             return RestClientUtils
@@ -42,7 +52,11 @@ namespace RestSharpAutomationBLL.Utils
                  );
         }
 
-        //Delete a post 
+        /// <summary>
+        /// Creates a DELETE request using id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static bool DeletePost(int id)
         {
             return RestClientUtils.Delete("/api/users/"+id.ToString(), DataFormat.Json, HttpStatusCode.NoContent);

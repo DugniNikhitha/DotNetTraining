@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Helpers.Logging;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
@@ -14,26 +15,58 @@ namespace Helpers.Actions
 
         public void ClickElement(By selector)
         {
-            WaitUntilElementDisplayed(selector).Click();
+            try
+            {
+                WaitUntilElementDisplayed(selector).Click();
+                Logger.PrintLog(new InfoLogger().LogMessage($"Clicked on the element '{selector}'"));
+            }
+            catch(ElementClickInterceptedException e)
+            {
+                Logger.PrintLog(new ErrorLogger().LogMessage(e.ToString()));
+
+            }
         }
 
         public void MoveToElement(By selector)
         {
-            //Action = new Actions(driver);
-            Action = new OpenQA.Selenium.Interactions.Actions(driver);
-            Action.MoveToElement(driver.FindElement(selector)).Perform();
+            try
+            {
+                Action = new OpenQA.Selenium.Interactions.Actions(driver);
+                Action.MoveToElement(driver.FindElement(selector)).Perform();
+                Logger.PrintLog(new InfoLogger().LogMessage($"Moved to the element '{selector}'"));
+            }
+            catch(Exception e)
+            {
+                Logger.PrintLog(new ErrorLogger().LogMessage(e.ToString()));
+            }
         }
 
         public void MouseHover(By selector)
         {
-            WaitUntilElementDisplayed(selector);
-            MoveToElement(selector);
+            try
+            {
+                WaitUntilElementDisplayed(selector);
+                MoveToElement(selector);
+                Logger.PrintLog(new InfoLogger().LogMessage($"Mouse hovered on the element '{selector}'"));
+            }
+            catch (Exception e)
+            {
+                Logger.PrintLog(new ErrorLogger().LogMessage(e.ToString()));
+            }
         }
 
         public void RightClick(By selector)
         {
-            Action = new OpenQA.Selenium.Interactions.Actions(driver);
-            Action.ContextClick(driver.FindElement(selector)).Perform();
+            try
+            {
+                Action = new OpenQA.Selenium.Interactions.Actions(driver);
+                Action.ContextClick(driver.FindElement(selector)).Perform();
+                Logger.PrintLog(new InfoLogger().LogMessage($"Right clicked on the element '{selector}'"));
+            }
+            catch (Exception e)
+            {
+                Logger.PrintLog(new ErrorLogger().LogMessage(e.ToString()));
+            }
         }
     }
 }

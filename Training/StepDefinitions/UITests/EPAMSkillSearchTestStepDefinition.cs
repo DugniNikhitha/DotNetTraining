@@ -1,8 +1,6 @@
 ﻿using Helpers.Driver;
 using Helpers.Pages;
-using Helpers.Reports;
 using NUnit.Framework;
-using TechTalk.SpecFlow;
 
 namespace Training.BDD.StepDefinitions.UITests
 {
@@ -11,12 +9,12 @@ namespace Training.BDD.StepDefinitions.UITests
     {
         private EPAMHomePage epamHome = EPAMHomePage.GetInstance;
         private EPAMSearchPage epamSearch = EPAMSearchPage.GetInstance;
-        private BaseDriver DriverInstance = BaseDriver.GetDriverInstance;
 
         [Given(@"I have entered the EPAM home page")]
         public void GivenIHaveEnteredTheEPAMHomePage()
         {
-            DriverInstance.GoToUrl();
+            var driver = ScenarioContext.Current.Get<IDriver>("driver");
+            driver.GoToUrl();
         }
 
         [Given(@"I have navigated to the Search panel")]
@@ -25,8 +23,6 @@ namespace Training.BDD.StepDefinitions.UITests
             epamHome.AcceptCookies();
             epamHome.ClickSearch();
         }
-
-        
 
         [When(@"I entered the SkillSet to search as")]
         public void WhenIEnteredTheSkillSetToSearchAs(Table table)
@@ -40,7 +36,6 @@ namespace Training.BDD.StepDefinitions.UITests
                 }
             }
         }
-
 
         [Then(@"The record message of the search result should match")]
         public void ThenTheRecordMessageOfTheSearchResultShouldMatch(Table table)

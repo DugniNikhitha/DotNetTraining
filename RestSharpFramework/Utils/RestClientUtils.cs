@@ -9,7 +9,6 @@ namespace RestSharpAutomationFramework.Utils
     {
         public static RestClient _RestClient;
         public static RestRequest _RestRequest;
-        //JsonReader js = new JsonReader();
         
         public static RestClient RestClient
         {
@@ -38,7 +37,13 @@ namespace RestSharpAutomationFramework.Utils
             }
         }
 
-        //Get
+        /// <summary>
+        /// Creates GET Request
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="resource"></param>
+        /// <param name="dataFormat"></param>
+        /// <returns></returns>
         public static T Get<T>(string resource, DataFormat dataFormat)
         {
             var response = RestClient.Execute(CreateRequest(resource, Method.Get));
@@ -46,7 +51,14 @@ namespace RestSharpAutomationFramework.Utils
             return JsonConvert.DeserializeObject<T>(responseBody);
         }
 
-        //Post
+        /// <summary>
+        /// Creates POST Request
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="resource"></param>
+        /// <param name="payload"></param>
+        /// <param name="dataFormat"></param>
+        /// <returns></returns>
         public static T Post<T>(string resource, string payload, DataFormat dataFormat)
         {
             var response = RestClient.Execute(CreateRequest(resource, Method.Post).AddBody(payload));
@@ -54,7 +66,13 @@ namespace RestSharpAutomationFramework.Utils
             return JsonConvert.DeserializeObject<T>(responseBody);
         }
 
-        //Delete
+        /// <summary>
+        /// Creates DELETE Request
+        /// </summary>
+        /// <param name="resource"></param>
+        /// <param name="dataFormat"></param>
+        /// <param name="expectedStatusCode"></param>
+        /// <returns></returns>
         public static bool Delete(string resource, DataFormat dataFormat, HttpStatusCode expectedStatusCode)
         {
             var response = RestClient.Execute(CreateRequest(resource, Method.Delete));
@@ -62,7 +80,14 @@ namespace RestSharpAutomationFramework.Utils
             return responseCode;
         }
 
-        //Update
+        /// <summary>
+        /// Creates PATCH Request
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="resource"></param>
+        /// <param name="payload"></param>
+        /// <param name="dataFormat"></param>
+        /// <returns></returns>
         public static T Patch<T>(string resource, string payload, DataFormat dataFormat)
         {
             var response = RestClient.Execute(CreateRequest(resource, Method.Patch).AddBody(payload));
@@ -70,6 +95,14 @@ namespace RestSharpAutomationFramework.Utils
             return JsonConvert.DeserializeObject<T>(responseBody);
         }
 
+        /// <summary>
+        /// Creates PUT Request
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="resource"></param>
+        /// <param name="payload"></param>
+        /// <param name="dataFormat"></param>
+        /// <returns></returns>
         public static T Put<T>(string resource, string payload, DataFormat dataFormat)
         {
             var response = RestClient.Execute(CreateRequest(resource, Method.Put).AddBody(payload));

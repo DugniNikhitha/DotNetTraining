@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Helpers.Logging;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -31,7 +32,16 @@ namespace Helpers.Actions
 
         public virtual bool GetPresenceOfElement(By selector)
         {
-            bool result = driver.FindElement(selector).Displayed;
+            bool result = false;
+            try
+            {
+                result = driver.FindElement(selector).Displayed;
+                Logger.PrintLog(new InfoLogger().LogMessage($"Element '{selector}' is present"));
+            }
+            catch(NoSuchElementException)
+            {
+                Logger.PrintLog(new ErrorLogger().LogMessage($"Element '{selector}' is present"));
+            }
             return result;
         }
 
@@ -51,15 +61,34 @@ namespace Helpers.Actions
 
         protected virtual IWebElement WaitUntilElementDisplayed(By selector)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            var element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(selector));
+            IWebElement element = null;
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(selector));
+                Logger.PrintLog(new InfoLogger().LogMessage($"Element '{selector}' is displayed"));
+            }
+            catch(TimeoutException)
+            {
+                Logger.PrintLog(new ErrorLogger().LogMessage($"Element '{selector}' is not displayed"));
+            }
             return element;
         }
 
         protected virtual IWebElement WaitUntilElementClickable(By selector)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            var element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(selector));
+            IWebElement element = null;
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+                element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(selector));
+                Logger.PrintLog(new InfoLogger().LogMessage($"Element '{selector}' is clickable"));
+            }
+            catch(TimeoutException)
+            {
+                Logger.PrintLog(new ErrorLogger().LogMessage($"Element '{selector}' is not clickable"));
+            }
+
             return element;
         }
     }
